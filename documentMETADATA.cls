@@ -225,12 +225,12 @@
 
 % Render author's linked-in (optional)
 % Usage: \linkedin{<linked-in-nick>}
-\newcommand*{\linkedin}[1]{\sociallink{\linkedinSymbol}{http://www.linkedin.com/in/#1/fr}{linkedin.com/in/#1}}
+\newcommand*{\linkedin}[1]{\sociallink{\linkedinSymbol}{http://www.linkedin.com/in/#1}{linkedin.com}}
 
 % Render author's personal website (optional)
 % Usage: \personalLink{<website-without-http://www.>}
-\newcommand*{\personalLink}[1]{\sociallink{\linkSymbol}{http://www.#1}{#1}}
-
+\newcommand*{\personalLink}[1]{\sociallink{\linkSymbol}{#1}{HCPC Professional Registration}}
+% https://www.hcpc-uk.org/check-the-register/professional-registration-detail/?query=CS20531&profession=CS
 
 % Render author's viadeo(optional)
 % Usage: \viadeo{<viadeo-nick>}
@@ -306,7 +306,8 @@
         \idphoto
       \end{minipage}
     }{}
-    \bigskip
+    \smallskip
+    % \bigskip
   }
 }
 
@@ -342,6 +343,7 @@
 
 % Define the 'scholarship' environment
 \newenvironment{scholarship}{%
+  \medskip
   \begin{tabular}{Y p{\rightcolumnlength}}
 }{%
   \end{tabular}
@@ -407,6 +409,22 @@
   						        #8
                    	\end{minipage}										\\*
                  & \footnotesize{\foreach \n in {#9}{\cvtag{\n}}} 	\\
+  }
+
+\newcommand\emptySeparator{\multicolumn{2}{c}{}\\}
+
+% Define the 'education' environment
+\newenvironment{education}{%
+  \begin{longtable}{R{\leftcolumn}|E}
+}{%
+  \end{longtable}
+}
+
+\newcommand\degree[6]{
+  \textbf{#1}    & \textbf{#2, \textsc{#3}} - #4   								\\*
+  \textbf{#5}    & \begin{minipage}[t]{\rightcolumnlength}
+  					         #6
+                   \end{minipage}										\\*
   }
 
 \newcommand\emptySeparator{\multicolumn{2}{c}{}\\}
