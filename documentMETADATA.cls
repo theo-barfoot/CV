@@ -427,7 +427,7 @@
                    \end{minipage}										\\*
   }
 
-\newcommand\emptySeparator{\multicolumn{2}{c}{}\\}
+% \newcommand\emptySeparator{\multicolumn{2}{c}{}\\}
 
 % Define the 'projects' environment
 \newenvironment{projects}{%
